@@ -93,7 +93,7 @@ func main() {
 
 		err := level.UnmarshalText([]byte(viper.GetString("log_level")))
 		if err != nil { // Silently fall back to info level
-			level = slog.LevelInfo
+			level = slog.LevelDebug
 		}
 
 		levelFilter := func(levels ...slog.Level) func(ctx context.Context, r slog.Record) bool {
